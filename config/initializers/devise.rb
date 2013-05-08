@@ -223,11 +223,11 @@ Devise.setup do |config|
   #config.omniauth :twitter, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
   #config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_KEY'], :strategy_class => OmniAuth::Strategies::Facebook
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_KEY'],
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'],
     :site => 'https://graph.facebook.com/',
     :authorize_path => '/oauth/authorize',
     :access_token_path => '/oauth/access_token',
-    :scope => %w(email)
+    :scope => 'email'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

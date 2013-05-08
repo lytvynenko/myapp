@@ -10,20 +10,13 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   # attr_accessible :title, :body
 
-  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-	  data = ActiveSupport::JSON.decode(access_token.get('https://graph.facebook.com/me?'))
-	  if user = User.find_by_email(data["email"])
-	    user
-	  else # Create an user with a stub password.
-	    User.create!(:email => data["email"], :password => Devise.friendly_token[0,20])
-	  end
-  end
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider,:uid)).first_or_create do |user|
   		user.provider = auth.provider
   		user.uid = auth.uid
-  		user.username = auth.info.nickname
+  		user.username = auth.info.name
+  		user.email = auth.info.email
   	end
   end	
 
