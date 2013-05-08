@@ -1,0 +1,27 @@
+<h1>Listing crushes</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Amount</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @crushes.each do |crush| %>
+  <tr>
+    <td><%= crush.user_id %></td>
+    <td><%= crush.amount %></td>
+    <td><%= crush.message %></td>
+    <td><%= link_to 'Show', crush %></td>
+    <td><%= link_to 'Edit', edit_crush_path(crush) %></td>
+    <td><%= link_to 'Destroy', crush, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Crush', new_crush_path %>
