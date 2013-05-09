@@ -40,4 +40,6 @@ gem 'jquery-rails'
 gem "devise"
 gem "omniauth-twitter"
 gem "omniauth-facebook"
+gem "omniauth-google"
+
 gem "omniauth"

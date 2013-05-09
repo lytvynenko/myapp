@@ -222,6 +222,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   #config.omniauth :twitter, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
+  config.omniauth :google, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+
   #config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_KEY'], :strategy_class => OmniAuth::Strategies::Facebook
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'],
     :site => 'https://graph.facebook.com/',
