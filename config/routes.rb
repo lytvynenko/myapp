@@ -1,6 +1,8 @@
 Myapp::Application.routes.draw do
   root :to => "pages#home"
   devise_for :users, path_names: {sign_in:"login",sign_out:"logout"}, controllers: {omniauth_callbacks:"omniauth_callbacks"}
+  
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

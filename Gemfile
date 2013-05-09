@@ -43,3 +43,4 @@ gem "omniauth-facebook"
 gem "omniauth-google"
 
 gem "omniauth"
+gem 'rails_admin'
