@@ -44,3 +44,4 @@ gem "omniauth-google"
 
 gem "omniauth"
 gem 'rails_admin'
+gem "cancan"

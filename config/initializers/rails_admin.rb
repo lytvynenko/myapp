@@ -8,6 +8,8 @@ RailsAdmin.config do |config|
 
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['Myapp', 'Admin']
+  # cancan 
+  config.authorize_with :cancan
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
