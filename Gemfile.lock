@@ -54,10 +54,15 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    google-webfonts-rails (0.0.3)
+      activesupport (~> 3.2.0, < 5.0)
     haml (4.0.2)
       tilt
     hashie (2.0.4)
     hike (1.2.2)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.1)
     journey (1.0.4)
@@ -79,6 +84,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.3)
+    multi_xml (0.5.3)
     multipart-post (1.2.0)
     nested_form (0.3.2)
     nokogiri (1.5.9)
@@ -98,6 +104,8 @@ GEM
       multi_json
       omniauth (~> 1.0)
       omniauth-oauth
+    omniauth-linkedin (0.1.0)
+      omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -184,10 +192,15 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   devise
+  google-webfonts-rails
+  httparty
   jquery-rails
+  json
+  nokogiri
   omniauth
   omniauth-facebook
   omniauth-google
+  omniauth-linkedin
   omniauth-twitter
   rails (= 3.2.13)
   rails_admin

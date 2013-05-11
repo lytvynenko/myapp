@@ -1,6 +1,7 @@
 # RailsAdmin config file. Generated on May 09, 2013 09:25
 # See github.com/sferik/rails_admin for more informations
 
+
 RailsAdmin.config do |config|
 
 
@@ -15,6 +16,7 @@ RailsAdmin.config do |config|
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
+
 
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'

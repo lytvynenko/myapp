@@ -1,26 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myapp</title>
+  <title>Doubleheart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+  <%= stylesheet_link_tag    "app", :media => "all" %>
+
+<!--  <%= javascript_include_tag "jquery" %> -->
   <%= javascript_include_tag "application" %>
+    <!--[if lt IE 9]>
+ 	 <%= javascript_include_tag "html5shiv" %>
+    <![endif]-->
+ <%= javascript_include_tag "respond.min.js" %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div id="user_nav">
-	<% if user_signed_in? %>
-		Logged as <strong><%= current_user.email %></strong>
-		<%= link_to "Edit profile", edit_user_registration_path %> | <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-	<% else %>
-		<%= link_to "Sign up", new_user_registration_path %> | 
-		<%= link_to "Login", new_user_session_path %> |
-		<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> |
-		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> |
-		<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google) %> |
-
+    <div class="navbar navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" id="logo" href="/"><%=image_tag ("logo-red-text-bold.png")%></a>
+          <a class="brand" id="slogan"  style="" href="/"><%=image_tag ("slogan-white.png")%></a>
+          <div class="nav-collapse collapse">
+			<% if user_signed_in? %>
+		         <form class="navbar-form pull-right">
+						<div class="btn-group">
+					<%= link_to edit_user_registration_path, :class=>"btn btn-mini" do %>
+					 <%if current_user.provider? %> <% prov = current_user.provider.gsub("google", "google-plus") %> <i class="icon-<%=prov %>"></i> <% else %><i class="icon-user"></i><% end %> <%=current_user.username %>
+          <% end %>
+          <button class="btn  btn-mini dropdown-toggle" data-toggle="dropdown">
+					   <span class="caret"></span>
+					</button>
+							  <ul class="dropdown-menu text-left">
+							   	<li>
+                    <%= link_to edit_user_registration_path do %>
+                      <i class="icon-cog"></i> Settings   
+                    <% end %>
+                  </li>
+							   	<li>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <i class="icon-signout"></i> Logout   
+                      
+                    <% end %>
+                  </li>
+							   </ul>
+				  	</div>
+				 </form>
+			<% else %>
+		            <form class="navbar-form pull-right">
+						<%= link_to "SIGN UP", new_user_registration_path, :class=>"btn btn-success" %>
+						<div class="btn-group">
+						  <a href="<%=new_user_session_path%>" class="btn"><i class="icon-signin"></i>&nbsp;SIGN IN</a>
+						  <button class="btn dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu text-left">
+								<li>
+                  <%= link_to user_omniauth_authorize_path(:twitter) do %>
+                  <i class="icon-twitter-sign"></i> with Twitter
+                  <% end %>
+                </li>
+								<li>
+                  <%= link_to user_omniauth_authorize_path(:facebook) do%>
+                  <i class="icon-facebook-sign"></i> with Facebook
+                  <% end %>
+                </li>
+								<li>
+                  <%= link_to  user_omniauth_authorize_path(:google) do%>
+                  <i class="icon-google-plus-sign"></i> with Google
+                  <% end %>
+                </li>
+								<li>
+                  <%= link_to user_omniauth_authorize_path(:linkedin) do%>
+                  <i class="icon-linkedin-sign"></i> with Linkedin
+                  <% end %>
+                </li>
+						  </ul>
+						</div>				
+		            </form>
 	<% end %>
-</div>	
+
+            <ul class="nav pull-right">
+              <li class="active"><a href="#">HOME</a></li>
+              <li><a href="#about">HOW IT WORKS</a></li>
+              <li><a href="#about">CHARITIES</a></li>
+              <li><a href="#contact">ABOUT US</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+
+<div id="wrap">
+    <div class="container" id="main-container">
 
 <% flash.each do |name, msg| %>
 	<%= content_tag :div, msg, id: "flash_#{name}" %>
@@ -29,5 +114,42 @@
 
 <%= yield %>
 
+</div>
+</div>
+<footer >
+  <section id="footer" class="with-bg">
+    <div class="container">
+    <div class="row-fluid">
+        <div class="span4">
+             <ul class="nav nav-list">
+              <li class="active"><a href="#">ABOUT DOUBLEHEART</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="how.html">How it works  </a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="span4">
+             <ul class="nav nav-list">
+              <li class="active"><a href="#">SUPPORT</a></li>
+              <li><a href="#">Online help</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Payments</a></li>
+            </ul>
+ 
+        </div>
+        <div class="span4">
+             <ul class="nav nav-list">
+              <li class="active"><a href="#">INFORMATION</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Security</a></li>
+            </ul>
+ 
+        </div>
+  </div>
+    </div>
+</section>    
+
+</footer>
 </body>
 </html>

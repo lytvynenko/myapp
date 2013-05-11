@@ -60,6 +60,6 @@ module Myapp
     config.assets.version = '1.0'
     #devise
     config.action_mailer.default_url_options = { :host => 'doubleheart.us:3000' }
-
+    config.assets.paths << Rails.root.join("app", "assets", "font")
   end
 end

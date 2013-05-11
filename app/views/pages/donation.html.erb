@@ -1,0 +1,878 @@
+   <div class="row-fluid">
+      <div class="accordion" id="accordion2">
+          <!--- CHARITY SELECT BEGIN -->
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+<!--                Find charity
+ -->              </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+              <div class="accordion-inner">  
+              <div class="row-fluid">
+                <div class="span12">
+                  <div class="alert alert-info">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        Please select one of the featured charities below, use the top-ten lists for guidance or use the keyword search to find another cause you would like to support
+                  </div>
+                </div>
+              </div>        
+              <div class="row-fluid" id="charity-search-wrap">
+                <div class="span6">
+                  <div class="row-fluid" >
+<!--                     <div class="media">
+                          <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placehold.it/64x64">
+                          </a>
+                          <div class="media-body">
+                            <h4 class="media-heading">Charity name</h4>
+                            <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit</small>
+                          </div>
+                    </div>
+ --> 
+
+        <div id="charityCarousel" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="item active">
+                  <%= image_tag ("charities/orphans.jpg") %>
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>ORPHANS CAN DREAM TOO</h1>
+                      <p class="lead">2852 MCKINLEY ST, RIVERSIDE, CA USA 92506</p>
+                      <a data-uuid="b9d575da-2023-11e0-a279-4061860da51d" class="btn btn-success pull-right" href="#">Select</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                 <%= image_tag ("charities/aca.jpg") %>
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>AMAZON CONSERVATION ASSOCIATION</h1>
+                      <p class="lead">1822 R ST NW WASHINGTON DC 20009-1604</p>
+                      <a data-uuid="b648a3d6-edd0-11df-ab8c-4061860da51d" class="btn btn-success pull-right" href="#">Select</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <%= image_tag ("charities/chdi.jpg") %>
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>CHILD HEALTH AND DEVELOPMENT INSTITUTE OF CONNECTICUT INC</h1>
+                      <p class="lead">270 FARMINGTON AVE STE 367 FARMINGTON CT 06032-1926</p>
+                      <a data-uuid="4b97f034-2023-11e0-a279-4061860da51d" class="btn btn-success pull-right" href="#">Select</a>
+                    </div>
+                  </div>
+                </div>
+             
+                <div class="item">
+                  <%= image_tag ("charities/oas.jpg") %>
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>ORPHAN AID SOCIETY</h1>
+                      <p class="lead">PO BOX 630245 DOUGLASTON NY 11363-0245</p>
+                      <a data-uuid="b96bd0ec-edd0-11df-ab8c-4061860da51d" class="btn btn-success pull-right" href="#">Select</a>
+                    </div>
+                  </div>
+                </div>
+
+
+	 </div>
+              <a class="left carousel-control" href="#charityCarousel" data-slide="prev">‹</a>
+              <a class="right carousel-control" href="#charityCarousel" data-slide="next">›</a>
+            </div>
+                  </div>
+                </div>
+  
+                <div class="span6">
+
+<ul class="nav nav-tabs" id="searchTabs">
+  <li class="active"><a href="#tab-lists">Top-ten lists <sup><small>by Charity Navigator</small></sup></a></li>
+  <li><a href="#tab-search">Advanced search <sup><small>by FirstGiving</small></sup></a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="tab-lists">
+    <div class="accordion" id="lists">
+    </div>
+  </div>
+  <div class="tab-pane" id="tab-search">
+                           <div class="row-fluid">
+                                    <form class="form-horizontal">
+                            <div class="span12">
+                                <input type="text" id="charity-search-input" class="input-block-level"  placeholder="Start typing here">
+                            </div>
+                                  </form>
+
+                            </div>
+                           <div class="row-fluid">
+                             <div class="span12" id="search-results">
+                            </div>
+                           </div>                
+                            
+  </div>
+</div>
+
+
+
+                </div>
+
+                  </div> <!-- row-fluid -->
+                </div> <!-- acc-inner -->
+              </div> <!-- collapse-One -->
+            </div> <!-- acc-group -->
+          <!--- CHARITY SELECT END -->
+  
+          <!--- PAYMENT BEGIN -->
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+<!--                 <img src="img/logo-red.png" height="15px" style="margin-right:10px">Make payment <input type="submit" class="btn btn-mini" style="float:right"value="test">
+ -->              </a>
+            </div>
+            <div id="collapseTwo" class="accordion-body collapse out">
+              <div class="accordion-inner">          
+<form class="form-horizontal" id="payment-form">
+  <div class="row-fluid">
+    <div class="span6 offset3">
+  
+    </div>
+  </div>
+<div class="row-fluid">
+<div class="span6">
+
+  <fieldset>
+    <legend>Payment</legend>
+ 
+              <input type="hidden" name="charity_uuid"/>
+              <div class="control-group">
+                <label class="control-label">Funds reciever</label>
+                <div class="controls" >
+                  <div class="span9" id="selected-charity" style="background: #ffffcc;">
+                    <h5></h5>
+                    <p>not yet selected</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">Amount</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                  <span class="add-on input-xxlarge">$</span>
+                  <input class="span5 input-xxlarge" name="amount" id="amount" type="text" value="999" pattern="\d+.*" required>
+                  </div>
+                </div>
+              </div>
+
+
+ <div class="control-group">
+      <label class="control-label">Card type</label>
+      <div class="controls">
+      <select name="cc_type">
+        <option selected="selected" value="VI">VISA</option>
+        <option value="MA">Mastercard</option>
+        <option value="AE">American Express</option>
+        <option value="DI">Dinner Club</option>
+      </select>
+
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Card Holder's Name</label>
+      <div class="controls">
+        <input type="text" name="cc_name" pattern="\w+ \w+.*" title="Fill your first and last name" required>
+      </div>
+    </div>
+ 
+ 
+
+    <div class="control-group">
+      <label class="control-label">Card Number</label>
+      <div class="controls">
+            <input type="text" name="cc_number" autocomplete="off" maxlength="16" pattern="\d{16}" title="Credit card number" required>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <label class="control-label">Card Expiry Date</label>
+      <div class="controls">
+        <div class="row-fluid">
+       <div class="span3">
+            <select name="cc_expDateMonth" class="input-block-level">
+                                           <option selected="selected" value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+            </select>
+          </div>
+          <div class="span3">
+            <select name="cc_expDateYear" class="input-block-level">
+                                              <option value="2013">2013</option>
+                                            <option selected="selected"  value="2014">2014</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <label class="control-label">Card CVV</label>
+      <div class="controls">
+        <div class="row-fluid">
+          <div class="span3">
+            <input type="password" name="cvv_code" class="input-block-level" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required>
+          </div>
+          <div class="span8">
+            <!-- screenshot may be here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<div class="span6">
+                            <fieldset>
+                                  <legend>
+                                    Address details
+                                  </legend>
+
+                               <div class="control-group">
+                                    <label class="control-label">First Name</label>
+                                    <div class="controls">
+                                      <input type="text" class="input-block-level" pattern="\w+.*" name="bill_firstName"  title="Fill your first name" required>
+                                    </div>
+                                </div>
+
+                               <div class="control-group">
+                                    <label class="control-label">Last Name</label>
+                                    <div class="controls">
+                                      <input type="text" class="input-block-level" pattern="\w+.*" name="bill_lastName"  title="Fill your last name" required>
+                                    </div>
+                                </div>
+
+                               <div class="control-group">
+                                    <label class="control-label">Address line</label>
+                                    <div class="controls">
+                                      <input type="text" class="input-block-level" pattern="\w+.*" name="bill_addressline"  title="Fill your last name" required>
+                                    </div>
+                                </div>
+
+                               <div class="control-group">
+                                    <label class="control-label">City,State,ZIP</label>
+                                    <div class="controls">
+                                            <div class="row-fluid">
+                                                  <div class="span5">
+                                                        <input class="input-block-level" type="text" name="bill_city" value="Burlington" required>
+                                                  </div>
+                                                  <div class="span4">
+                                                      <select class="input-block-level"  name="bill_state">
+                                                          <option value="AL">Alabama</option>
+                                                          <option value="AK">Alaska</option>
+                                                          <option value="AZ">Arizona</option>
+                                                          <option value="AR">Arkansas</option>
+                                                          <option value="CA">California</option>
+                                                          <option value="CO">Colorado</option>
+                                                          <option value="CT">Connecticut</option>
+                                                          <option value="DC">District of Columbia</option>
+                                                          <option value="DE">Delaware</option>
+                                                          <option value="FL">Florida</option>
+                                                          <option value="GA">Georgia</option>
+                                                          <option value="HI">Hawaii</option>
+                                                          <option value="ID">Idaho</option>
+                                                          <option value="IL">Illinois</option>
+                                                          <option value="IN">Indiana</option>
+                                                          <option value="IA">Iowa</option>
+                                                          <option value="KS">Kansas</option>
+                                                          <option value="KY">Kentucky</option>
+                                                          <option value="LA">Louisiana</option>
+                                                          <option value="ME">Maine</option>
+                                                          <option value="MD">Maryland</option>
+                                                          <option selected="selected" value="MA">Massachusetts</option>
+                                                          <option value="MI">Michigan</option>
+                                                          <option value="MN">Minnesota</option>
+                                                          <option value="MS">Mississippi</option>
+                                                          <option value="MO">Missouri</option>
+                                                          <option value="MT">Montana</option>
+                                                          <option value="NE">Nebraska</option>
+                                                          <option value="NV">Nevada</option>
+                                                          <option value="NH">New Hampshire</option>
+                                                          <option value="NJ">New Jersey</option>
+                                                          <option value="NM">New Mexico</option>
+                                                          <option value="NY">New York</option>
+                                                          <option value="NC">North Carolina</option>
+                                                          <option value="ND">North Dakota</option>
+                                                          <option value="OH">Ohio</option>
+                                                          <option value="OK">Oklahoma</option>
+                                                          <option value="OR">Oregon</option>
+                                                          <option value="PA">Pennsylvania</option>
+                                                          <option value="RI">Rhode Island</option>
+                                                          <option value="SC">South Carolina</option>
+                                                          <option value="SD">South Dakota</option>
+                                                          <option value="TN">Tennessee</option>
+                                                          <option value="TX">Texas</option>
+                                                          <option value="UT">Utah</option>
+                                                          <option value="VT">Vermont</option>
+                                                          <option value="VA">Virginia</option>
+                                                          <option value="WA">Washington</option>
+                                                          <option value="WV">West Virginia</option>
+                                                          <option value="WI">Wisconsin</option>
+                                                          <option value="WY">Wyoming</option>
+                                                          <option value="GU">Guam</option>
+                                                          <option value="VI">Virgin Islands</option>
+                                                          <option value="PR">Puerto Rico</option>
+                                                          <option value="AS">American Samoa</option>                                          
+                                                      </select>
+
+                                                  </div>
+                                                  <div class="span3">
+                                                    <input class="input-block-level" type="text" name="bill_zip" value="01803" required>
+                                                  </div>
+                                                </div>
+                                      
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label class="control-label">Bill e-mail</label>
+                                    <div class="controls">
+                                      <input type="text" class="input-block-level" name="bill_email" value="bovdurenko@gmail.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Bill phone number</label>
+                                    <div class="controls">
+                                      <input type="text" class="input-block-level" name="bill_phone" value="12312312312" >
+                                    </div>
+                                </div>
+                                </fieldset>
+    </div>
+   <div class="row-fluid">
+     <div class="span12 text-center">
+      <button type="submit" class="btn-large btn-success">Donate away</button>
+     </div>
+   </div>
+</form>
+
+                    </div> <!--- PAYMENT END -->
+              </div> <!-- acc-inner -->
+              </div> <!-- collapse-One -->
+            </div> <!-- acc-group -->
+        </div> <!-- accordion -->
+      </div> <!-- row-fluid -->
+ </div> <!-- container -->
+ 
+
+<script>  
+
+function httpGet(theUrl)
+    {
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+    }
+
+var jsonp = {
+    callbackCounter: 0,
+ 
+    fetch: function(url, callback) {
+        var fn = 'JSONPCallback_' + this.callbackCounter++;
+        window[fn] = this.evalJSONP(callback);
+        url = url.replace('=JSONPCallback', '=' + fn);
+ 
+        var scriptTag = document.createElement('SCRIPT');
+        scriptTag.src = url;
+        document.getElementsByTagName('HEAD')[0].appendChild(scriptTag);
+    },
+ 
+    evalJSONP: function(callback) {
+        return function(data) {
+            var validJSON = false;
+        if (typeof data == "string") {
+            try {validJSON = JSON.parse(data);} catch (e) {
+                /*invalid JSON*/}
+        } else {
+            validJSON = JSON.parse(JSON.stringify(data));
+                window.console && console.warn(
+                'response data was not a JSON string');
+            }
+            if (validJSON) {
+                callback(validJSON);
+            } else {
+                throw("JSONP call returned invalid or empty JSON");
+            }
+        }
+    }
+}
+
+function getLists(data) {
+
+  var res='';
+  $.each(data,function(key,obj) {
+      res = res+'<div class="accordion-group">'+
+            		'<div class="accordion-heading">'+
+            			'<a href="#cn_list_'+obj.listid+'" data-parent="#lists" data-toggle="collapse" class="accordion-toggle"><i class="icon-circle-arrow-down"></i>&nbsp;'+obj.listname+'</a>'+
+            		'</div>'+
+            		'<div id="cn_list_'+obj.listid+'" data-id="'+obj.listid+'" class="accordion-body collapse">'+
+            			'<div class="accordion-inner">'+
+            				'<p class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button><small>'+obj.description+'</small></p>'+
+            				'<div class="accordion" id="list_'+obj.listid+'">'+
+            				'</div>'+
+            			'</div>'+
+            		'</div>'+
+            	'</div>';  
+  });
+  $('#lists').prepend(res);
+}
+
+function getFG_info(ein,container,orgid){
+  var cn_url = 'http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid='+orgid;
+  var params = {
+  q: 'government_id:'+ein, 
+};
+$.ajax({
+  dataType: 'jsonp',
+  contentType: 'application/json',
+  data: params,
+  jsonp: 'jsonpfunc',
+  url: 'http://graphapi.firstgiving.com/v1/list/organization?jsonpfunc=?',
+  success: function(data) {
+    obj = data.payload[0];
+    console.log(obj);
+    var res='<div class="row-fluid">'+
+            '<div class="span10 columns">'+
+            '<div class="row-fluid" id="name"><strong>'+
+              obj.organization_name+
+ //            (obj.organization_abstract ? '&nbsp;<a href="#" class="btn btn-mini charity-desc-switch"><i class="icon-question-sign"></i></a>' : '')+   
+            '</strong></div>'+
+            '<div class="row-fluid" id="address"><small>'+
+                obj.address_full+
+            '</small></div>'+
+            '<div class="row-fluid" id="category"><small>category:'+
+           (obj.category_title ? obj.category_title :'') +
+            '</small></div>'+
+            '<div class="row-fluid" id="IDD"><small>EIN:'+
+              obj.government_id +
+            '</small></div>'+
+            '<div class="row-fluid"><small><a class="btn btn-mini" href="'+
+              cn_url +'" target="_blank">CN summary</a>'+
+            '</small></div>'+
+            '</div><div class="span2 text-center"><a href="#" class="btn btn-success input-block-level text-center select-action">Select</a></div>'+
+            '</div>'+
+            (obj.organization_abstract ? '<div class="row-fluid"><div class="span12 charity-desc">'+obj.organization_abstract+'</div></div>' : '')+'</div></div>';
+            $(container).attr('data-uuid',obj.organization_uuid);
+            $(container).children('.accordion-inner').removeClass('text-center');
+            $(container).children('.accordion-inner').html(res);
+  },
+  error: function(error) {
+            $(container).children('.accordion-inner').html('ERROR! Something went wrong :(');
+
+  }
+ 
+});
+}
+
+function getList(data) {
+  var res='';
+  var listid;
+  console.log(data);
+  $.each(data,function(key,obj) {
+      res = res+'<div class="accordion-group">'+
+            		'<div class="accordion-heading">'+
+            			'<a href="#cn_org_'+obj.ein+'" data-orgid="'+obj.orgid+'" data-parent="#list_'+obj.listid+'" data-toggle="collapse" class="accordion-toggle inner"><i class="icon-circle-arrow-down"></i>&nbsp;'+obj.charity_name+'</a>'+
+            		 '</div>'+
+            		 '<div id="cn_org_'+obj.ein+'" data-uuid="" data-ein="'+obj.ein+'" class="accordion-body collapse charity-search-item">'+
+            			'<div class="accordion-inner text-center">'+
+            			'<i class="icon-spinner icon-spin icon-large"></i>'+
+            			'</div>'+
+            		'</div>'+
+            	'</div>';  
+      listid = obj.listid;
+  });
+  $('#list_'+listid).html(res);
+}
+
+
+
+$(document).ready(function() {
+
+	$('#searchTabs a:first').tab('show'); 
+
+$('#searchTabs a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+});
+
+   var requestAddr = '/service/cn_lists?callback=getLists';
+   jsonp.fetch(requestAddr,getLists);
+
+
+$(document).on("click","a",function(event){
+    if ($(this).hasClass('accordion-toggle')) {
+   		
+	    var container = $($(this).attr("href"));
+	    
+	    if ($(container).hasClass('in')) {
+	    	$(this).children().removeClass('icon-circle-arrow-down');
+	    	$(this).children().addClass('icon-circle-arrow-up');
+	    }
+	    else
+	    {
+	    	$(this).children().removeClass('icon-circle-arrow-up');
+	    	$(this).children().addClass('icon-circle-arrow-down');
+	    }
+	    if ($(container).data('id')) {
+	    //$(container).children('.accordion-inner').html('<img src="img/ajax-loader.gif">');
+	    var list_id = $(container).data("id");
+	    requestAddr = '/service/cn_list/?listid='+list_id+'&callback=getList';
+	    jsonp.fetch(requestAddr,getList);
+	    }
+	    else if ($(container).data('ein')) {
+	    	
+	    	var orgid = $(this).data('orgid');
+	        getFG_info($(container).data('ein'),container,orgid);
+	    }
+	    else
+	      return true;
+		}
+		else if ($(this).hasClass('select-action'))  {
+			debugger;
+			var parent_div = $(this).parents()[3];
+		    var uuid = $(parent_div).attr('data-uuid');	
+		    var name = $(parent_div).find('#name').html();
+		    var address = $(parent_div).find('#address').html();
+		    $('#selected-charity h5').html(name);
+		    $('#selected-charity p').html(address);
+
+		    // $('#selected-charity').children('div:first').removeClass('push-3');
+		    // $('#selected-charity').children('div:first').removeClass('span7');
+		    // $('#selected-charity').children('div:first').addClass('span12');
+		    $('#search-results').addClass('active');
+		    $('input[name=charity_uuid]').val(uuid);
+		    
+		    $('#collapseOne').collapse('hide');
+		    $('#collapseTwo').collapse('show');
+		    $('#charity-search-input').next('small').remove();
+
+
+		}
+    })
+
+// var validator = $("#payment-form").validate({
+//     rules: {
+//       cc_name: {
+//         required: true,
+//         minlength: 5
+
+//         }, 
+//       cc_number: {
+//         required: true,
+//         minlength: 16,
+//         maxlength:16,
+//         creditcard:true
+//       },
+//       cvv_code:{
+//         required: true,
+//         minlength: 3,
+//         maxlength:3
+//       },
+//       bill_firstName: "required",
+//       bill_lastName: "required",
+//       bill_state: "required",
+//       bill_city: "required",
+//       bill_zip: "required",
+//       bill_addressline:"required",
+//       bill_phone: {
+//         required:true,
+//         digits:true
+//       },
+//       bill_email: {
+//         required: true,
+//         email: true
+//       },
+//       amount: {
+//         required: true,
+//         digits: true
+//       },
+//       msg: "required"
+//     },
+//     messages:{
+//       cc_name:"field in empty or incorrect",
+//       cc_number:"field in empty or incorrect",
+//       cvv_code:"field in empty or incorrect",
+//       bill_lastName:"field in empty or incorrect",
+//       bill_firstName:"field in empty or incorrect",
+//       bill_phone:"field in empty or incorrect",
+//       bill_email:"field in empty or incorrect"
+//     },
+//     errorPlacement: function(error, element) {
+//       $(element).addClass('error');
+//       $(element).next('small').remove();
+//       $(element).after('<small class="error">field in empty or incorrect</small>');
+//     },
+//     submitHandler: function() {
+
+//      var success_content = $('#modalMessage').html();
+//      $('#form_submit').css('background-image','url(img/ajax-loader.gif)');
+//      $('#form_submit').val('');
+
+//      $.ajax({
+//     type: "post",
+//     url: "donate.php",
+//     data: $('#payment-form').serialize(),
+//     success: function(result) {
+
+//        $('#form_submit').css('background-image','none');
+//        $('#form_submit').val('Donate Away');
+//        var obj = JSON.parse(result);
+//        if (obj.responseCode == 201) //success
+//          {
+//          $('a[href=#panelPayment]').parent(2).after(success_content);
+//          $('#transaction_ID').html('Transaction ID:'+obj.transation_id);
+//          $('a[href=#panelDone]').trigger('click');
+//          }
+//          else {
+//           alert('Something went wrong :(');
+//          }
+//       }
+//     });
+//      return false;
+//   }
+//    });
+
+
+     });
+
+
+
+
+
+
+
+var featured = ""; //'<div data-uuid="b8f2bae0-edd0-11df-ab8c-4061860da51d" id="item_b8f2bae0-edd0-11df-ab8c-4061860da51d" class="row-fluid charity-search-item featured"><div class="span10 offset2 columns"><div class="row-fluid" id="name"><strong>NATIONAL PUBLIC RADIO INC</strong></div><div class="row-fluid" id="address"><small>635 MASSACHUSETTS AVENUE NW, WASHINGTON, DC USA 20001</small></div><div class="row-fluid" id="IDD">ID:<a href="#" class="search-info">520907625</a></div></div></div>';
+
+function charitySearch(data){
+
+  // organization_uuid
+  // organization_name
+  // address_full
+  // government_id
+  // category_description
+  // category_title
+  //organization_abstract
+   var acc_layout = '<div class="accordion" id="search-results-acc">';
+   var payload = data.payload;
+   var searchResults = acc_layout;
+   $.each(payload,function(key,obj){
+       //console.log(obj);
+      searchResults = searchResults +
+      '<div class="accordion-group">'+
+      '<div class="accordion-heading">'+
+      '<a class="accordion-toggle" data-toggle="collapse" data-parent="#search-results-acc" href="#item_'+obj.organization_uuid+'"><i class="icon-circle-arrow-down"></i>&nbsp;'+
+      obj.organization_name+
+      '</a></div>'+
+      '<div data-uuid="'+obj.organization_uuid+'" id="item_'+obj.organization_uuid+'" class="accordion-body collapse out charity-search-item">'+
+      '<div class="accordion-inner">'+
+            '<div class="row-fluid">'+
+            '<div class="span10 columns">'+
+            '<div class="row-fluid" id="name"><strong>'+
+              obj.organization_name+
+ //            (obj.organization_abstract ? '&nbsp;<a href="#" class="btn btn-mini charity-desc-switch"><i class="icon-question-sign"></i></a>' : '')+   
+            '</strong></div>'+
+            '<div class="row-fluid" id="address"><small>'+
+                obj.address_full+
+            '</small></div>'+
+            '<div class="row-fluid" id="category"><small>category:'+
+           (obj.category_title ? obj.category_title :'') +
+            '</small></div>'+
+            '<div class="row-fluid" id="IDD"><small>EIN:'+
+              obj.government_id +
+            '</small></div>'+
+            '</div><div class="span2 text-center"><a href="#" class="btn btn-success input-block-level text-center select-action">Select</a></div>'+
+            '</div>'+
+            (obj.organization_abstract ? '<div class="row-fluid"><div class="span12 charity-desc">'+obj.organization_abstract+'</div></div>' : '') +
+            '</div>'+
+      '</div></div>';
+        // searchResults = searchResults +
+        // '<div data-uuid="'+obj.organization_uuid+'" id="item_'+obj.organization_uuid+'" class="row-fluid charity-search-item">'+
+        //     '<div class="span10 offset2 columns">'+
+        //     '<div class="row-fluid" id="name"><a href="#" class="search-info"><strong>'+
+        //         obj.organization_name+
+        //     '</strong></a></div>'+
+        //     '<div class="row-fluid" id="address"><small>'+
+        //         obj.address_full+
+        //     '</small></div>'+
+        //     '<div class="row-fluid" id="IDD"><div class="span9">ID:'+
+        //         obj.government_id+
+        //     '</div><div class="span3 text-right"><a href="#" class="btn btn-mini">About</a><a href="#" class="btn btn-mini">IRS info</a></div></div>'+
+        //     '</div>'+
+        //     //'<div class="span2 columns"><a data-uuid="'+obj.organization_uuid+'" class="button tiny success" id="charity-select" href="#">Select</a></div>'+
+        // '</div>';
+   });
+  searchResults = searchResults+'</div>';
+   $('#search-results').html(searchResults);
+   $('#search-results').slideDown();
+
+// $('accordion').on('click','a',function(){
+//     if ($(this).hasClass(' .select-action')) {
+//     debugger;
+//     var uuid = $($(this).parents()[3]).data('uuid');
+//     var name = $('#item_'+uuid+' #name').html();
+//     var address = $('#item_'+uuid+' #address').html();
+//     $('#selected-charity h5').html(name);
+//     $('#selected-charity p').html(address);
+
+//     // $('#selected-charity').children('div:first').removeClass('push-3');
+//     // $('#selected-charity').children('div:first').removeClass('span7');
+//     // $('#selected-charity').children('div:first').addClass('span12');
+//     $('#search-results').addClass('active');
+//     $('input[name=charity_uuid]').val(uuid);
+//     $('#collapseOne').collapse('hide');
+//     $('#collapseTwo').collapse('show');
+//     $('#charity-search-input').next('small').remove();
+// }
+// });
+}
+
+// $('a .charity-desc-switch').on('click',function(){
+//   var desc_div = $(this).parent(4);
+//   //console.log(desc_div);
+
+  
+//   $(desc_div).siblings().css('position','absolute').animate({"top": "350px"}, "slow");
+//   $(desc_div).css('display','block');
+//   $(desc_div).parent().css('height',$(desc_div).css('height')); 
+
+// });
+
+
+$('#charityCarousel a.btn').on('click',function(){
+    var uuid = $(this).data('uuid');
+    var name = $(this).siblings('h1').html();
+    var address = $(this).siblings('p').html();
+
+     $('#selected-charity h5').html(name);
+    $('#selected-charity p').html(address);
+    // $('#selected-charity').children('div:first').removeClass('push-3');
+    // $('#selected-charity').children('div:first').removeClass('span7');
+    // $('#selected-charity').children('div:first').addClass('span12');
+    $('#search-results').addClass('active');
+    $('input[name=charity_uuid]').val(uuid);
+    $('#collapseOne').collapse('hide');
+    $('#collapseTwo').collapse('show');
+    $('#charity-search-input').next('small').remove();
+
+});
+
+$('#charity-search-input').keyup(function(){
+    var searchString = $(this).val();
+    if (searchString.length==0) { $('#search-results').html(''); return; }
+    $(this).next('small').remove();
+    searchString = encodeURIComponent(searchString);
+
+    var requestAddr = 'https://graphapi.firstgiving.com/v2/list/organization?q=organization_name:'+searchString+'*%20AND%20country:US&page_size=10&jsonpfunc=charitySearch';
+    jsonp.fetch(requestAddr);
+ });
+
+$('#payment-form input[type=text]').keyup(function(){
+
+  if ($(this).hasClass('error') && $(this).val()) {
+    $(this).removeClass('error');
+    $(this).next('small').remove();
+  }
+});
+
+
+$('a[href=#panelPayment]').click(function(e){
+
+  if (!$('#payment-form input[name=charity_uuid]').val()){
+    $('#payment-form input[type=submit]').addClass('disabled');
+    $('#charity-search-input').next('small').remove();
+    $('#charity-search-input').after('<small class="error">Please, select charity first</small>');   
+    $('a[href=#panelSearch]').trigger('click');
+    return false;
+  }
+  else {
+    $('#payment-form input[type=submit]').removeClass('disabled');
+  }
+})
+
+// $('#form_submit').bind("submit",function(e){
+//   $.ajax({
+//     type: "post",
+//     url: "donate.php",
+//     data: $('#payment-form').serialize(),
+//     success: function(result) {
+//         console.log(result);
+//     }
+// });
+  
+// });
+
+
+
+ 
+
+$('#selected-charity').on('click','a',function(){
+
+ 
+ var tax_id = $('#selected-charity a').html();
+var tax_id_dash = [tax_id.slice(0, 2), "-", tax_id.slice(2)].join(''); 
+//console.log(tax_id_dash); 
+
+     $.ajax({
+    type: "post",
+    url: "get_url.php",
+    data: {EIN:tax_id_dash},
+    success: function(result) {
+  var pageLocation = 'http:'+JSON.parse(result)[4].split(":")[2];
+
+
+ //var url ="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+encodeURIComponent(pageLocation)+"%22%20and%20xpath%3D'%2F%2Fdiv%5B%40class%3D%22description%22%5D%2Fp'";
+var url ="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+encodeURIComponent(pageLocation)+"%22%20and%20(xpath%3D'%2F%2Fdiv%5B%40class%3D%22description%22%5D%2Fp'%20or%20xpath%3D'%2F%2Fdiv%5B%40id%3D%22charityCard%22%5D')";
+ 
+res = httpGet(url);
+$('results',res).each(function(i){
+                 results = $(this);
+                 $('#modalHeader').html($('#selected-charity #name').html());
+                 $('#modalContent').html(results.html());
+    $('#taxInfo').show();
+                 $('#myModal').foundation('reveal', 'open');
+              });
+
+}
+});
+
+
+ var url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.melissadata.com%2Flookups%2Fnp.asp%3Fzip%3D"+tax_id+"%22%20and%20xpath%3D'%2F%2Ftable%5B%40class%3D%22Tableresultborder%22%5D'";
+  res = httpGet(url);
+$('results',res).each(function(i){
+                 results = $(this);
+                 $('#myModalTaxInfo #modalContent').html(results.html());
+                 $('.Tableresultborder tr:last').remove();
+     $('.Tableresultborder').attr('width','100%');    
+              });
+
+
+});
+
+</script>

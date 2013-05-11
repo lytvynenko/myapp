@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  listid: 1
+  listname: MyString
+  typeid: 1
+  list_type: MyString
+  rank: MyString
+  orgid: 1
+  charity_name: MyString
+
+two:
+  listid: 1
+  listname: MyString
+  typeid: 1
+  list_type: MyString
+  rank: MyString
+  orgid: 1
+  charity_name: MyString

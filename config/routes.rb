@@ -1,8 +1,18 @@
 Myapp::Application.routes.draw do
+  resources :featured_charities
+
+
   root :to => "pages#home"
   devise_for :users, path_names: {sign_in:"login",sign_out:"logout"}, controllers: {omniauth_callbacks:"omniauth_callbacks"}
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  match '/service' => 'pages#load'
+  match '/donation' => 'pages#donation'
+
+  match '/service/cn_load' => 'service#cn_load'
+  match '/service/cn_lists' => 'service#get_cn_lists'
+  match '/service/cn_list' => 'service#get_cn_list'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

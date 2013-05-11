@@ -40,5 +40,6 @@ Myapp::Application.configure do
   ENV['TWITTER_CONSUMER_SECRET'] = "MQBGmGhpv7LIsUmIZOArXaLeHTyW6eQnBvSPkM3548";
   ENV['GOOGLE_KEY'] = '659693689157.apps.googleusercontent.com';
   ENV['GOOGLE_SECRET'] = '7dBlZedZAjd5brRy8911NJ_B';
-
+  ENV['LINKEDIN_KEY'] = 'mp98m3rv1p8a';
+  ENV['LINKEDIN_SECRET']  = 'ccMjglcbpy1cUcS3';
 end

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  orgid: 1
+  charity_name: MyString
+  city: MyString
+  state: MyString
+  category: MyString
+  cause: MyString
+  tag_line: MyString
+  ein: MyString
+  overallrtg: 1.5
+  overallscore: 1.5
+  rank: 1
+
+two:
+  orgid: 1
+  charity_name: MyString
+  city: MyString
+  state: MyString
+  category: MyString
+  cause: MyString
+  tag_line: MyString
+  ein: MyString
+  overallrtg: 1.5
+  overallscore: 1.5
+  rank: 1

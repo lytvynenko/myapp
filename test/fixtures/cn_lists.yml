@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  listid: 1
+  listname: MyString
+  description: MyString
+  typeid: 1
+  list_type: MyString
+
+two:
+  listid: 1
+  listname: MyString
+  description: MyString
+  typeid: 1
+  list_type: MyString

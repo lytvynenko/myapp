@@ -41,7 +41,14 @@ gem "devise"
 gem "omniauth-twitter"
 gem "omniauth-facebook"
 gem "omniauth-google"
+gem "omniauth-linkedin"
 
 gem "omniauth"
 gem 'rails_admin'
 gem "cancan"
+
+gem "json"
+gem  "httparty"
+
+gem 'google-webfonts-rails'
+gem 'nokogiri'

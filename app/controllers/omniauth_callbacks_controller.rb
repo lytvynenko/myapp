@@ -14,7 +14,7 @@ class OmniauthCallbacksController < ApplicationController
 alias_method :twitter, :all
 alias_method :facebook, :all
 alias_method :google, :all
-
+alias_method :linkedin, :all
 	# def facebook
 
  #    @user = User.find_for_facebook_oauth(request.env["omniauth.auth"])

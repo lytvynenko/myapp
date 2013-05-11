@@ -11,7 +11,56 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509094423) do
+ActiveRecord::Schema.define(:version => 20130511072708) do
+
+  create_table "cn_charities", :force => true do |t|
+    t.integer  "orgid"
+    t.string   "charity_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "category"
+    t.string   "cause"
+    t.string   "tag_line"
+    t.string   "ein"
+    t.float    "overallrtg"
+    t.float    "overallscore"
+    t.integer  "rank"
+    t.boolean  "featured"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "cn_charity_lists", :force => true do |t|
+    t.integer  "listid"
+    t.string   "listname"
+    t.integer  "typeid"
+    t.string   "list_type"
+    t.string   "rank"
+    t.integer  "orgid"
+    t.string   "charity_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "category"
+    t.string   "charity_url"
+    t.string   "category_slug"
+    t.string   "value_label"
+    t.string   "resource_uri"
+    t.string   "value"
+    t.string   "ein"
+  end
+
+  create_table "cn_lists", :force => true do |t|
+    t.integer  "listid"
+    t.string   "listname"
+    t.string   "description"
+    t.integer  "typeid"
+    t.string   "list_type"
+    t.boolean  "show"
+    t.integer  "show_order"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "resource_uri"
+  end
 
   create_table "crushes", :force => true do |t|
     t.integer  "user_id"

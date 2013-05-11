@@ -3,12 +3,12 @@ class Ability
 
   def initialize(user)
 
-    #can :access, :rails_admin   # grant access to rails_admin
+    #can :manage, :rails_admin   # grant access to rails_admin
     #can :dashboard              # grant access to the dashboard
 
     can :read, :all                   # allow everyone to read everything
     if user && user.admin?
-      can :access, :rails_admin       # only allow admin users to access Rails Admin
+      can :manage, :all       # only allow admin users to access Rails Admin
       can :dashboard                  # allow access to dashboard
       # if user.role? :superadmin
       #   can :manage, :all             # allow superadmins to do anything
