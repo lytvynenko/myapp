@@ -16,7 +16,6 @@
     <!--[if lt IE 9]>
  	 <%= javascript_include_tag "html5shiv" %>
     <![endif]-->
- <%= javascript_include_tag "respond.min.js" %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -108,7 +107,7 @@
     <div class="container" id="main-container">
 
 <% flash.each do |name, msg| %>
-	<%= content_tag :div, msg, id: "flash_#{name}" %>
+<div class="flash-alert" data-content="<%=msg %>" data-container="#logo" data-placement="bottom" data-delay="500"></div>
 <% end %>
 
 
@@ -151,5 +150,18 @@
 </section>    
 
 </footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40864200-1', 'doubleheart.us');
+  ga('send', 'pageview');
+
+jQuery(document).ready(function($) {
+  $('.flash-alert').popover('show');
+});
+</script>
 </body>
 </html>

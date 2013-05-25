@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511072708) do
+ActiveRecord::Schema.define(:version => 20130515082200) do
 
   create_table "cn_charities", :force => true do |t|
     t.integer  "orgid"
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(:version => 20130511072708) do
     t.string   "resource_uri"
   end
 
+  create_table "contacts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "contacts", ["user_id"], :name => "index_contacts_on_user_id"
+
   create_table "crushes", :force => true do |t|
     t.integer  "user_id"
     t.float    "amount"
@@ -69,6 +79,49 @@ ActiveRecord::Schema.define(:version => 20130511072708) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "featured_charities", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "ein"
+    t.string   "fg_uuid"
+    t.integer  "cn_id"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "fields", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "fields", ["user_id"], :name => "index_fields_on_user_id"
+
+  create_table "profile_attributes", :force => true do |t|
+    t.integer  "profile_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "profile_attributes", ["profile_id"], :name => "index_profile_attributes_on_profile_id"
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "primary_email"
+    t.string   "primary_mobile"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -82,6 +135,36 @@ ActiveRecord::Schema.define(:version => 20130511072708) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "user_attributes", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_attributes", ["user_id"], :name => "index_user_attributes_on_user_id"
+
+  create_table "user_data", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_data", ["user_id"], :name => "index_user_data_on_user_id"
+
+  create_table "user_fields", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_fields", ["user_id"], :name => "index_user_fields_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -101,6 +184,7 @@ ActiveRecord::Schema.define(:version => 20130511072708) do
     t.string   "uid"
     t.string   "User"
     t.boolean  "admin"
+    t.string   "oauth_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

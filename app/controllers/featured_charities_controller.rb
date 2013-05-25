@@ -1,4 +1,5 @@
 class FeaturedCharitiesController < ApplicationController
+  before_filter: :admin
   # GET /featured_charities
   # GET /featured_charities.json
   def index

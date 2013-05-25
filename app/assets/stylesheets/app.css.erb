@@ -307,6 +307,19 @@ background-image: url(<%= asset_path 'bedge_grunge.png' %>); background-position
 	background: #ffc;
 }
 
+.contact-data {
+	max-height: 360px;
+	height:360px;
+		overflow-y:auto;
+	overflow-x:hidden;
+	padding:0 5px; 
+
+}
+.contact-data .add-on {
+	width:75px;
+	font-size:small;
+}
+
 /* - RESPONSIVE STUFF - */
 /* Large desktop */
 @media (min-width: 1200px) {
@@ -324,6 +337,14 @@ background-image: url(<%= asset_path 'bedge_grunge.png' %>); background-position
 	margin-right: -10px;
 	margin-top: -20px;
 	}
+
+	.contact-data input {
+	width:400px;
+}
+
+ .contact-data textarea {
+ 	width:520px;
+ }
 
 }
  
@@ -344,6 +365,9 @@ background-image: url(<%= asset_path 'bedge_grunge.png' %>); background-position
 }
 #main-img-text {
 	font-size: 1.4em;
+}
+.contact-data input {
+	width:260px;
 }
  }
 /* Portrait tablet to landscape and desktop */
@@ -368,6 +392,10 @@ background-image: url(<%= asset_path 'bedge_grunge.png' %>); background-position
 
 	#main-img-text {
 	font-size: 1.3em;
+}
+
+.contact-data input {
+	width:190px;
 }
 
 }

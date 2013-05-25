@@ -16,6 +16,14 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 <% end %>
+
+<%= f.fields_for :user_data do |t| %>
+     <div class ="field">
+        <%= t.label :type, "Are you an artist or listener?" %><br />
+        <p> Artist: <%= t.text_field :type, "Profile::Type", :id => "user_data_type" %></p>
+        <p> Listener: <%= t.text_field :value, "Profile::Value", :id => "user_data_value" %></p>
+      </div>
+  <% end %>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

@@ -6,8 +6,8 @@ class ServiceController < ApplicationController
     res = JSON.parse(response)
     res['objects'].each do |object|
     	if CnList.where(:listid=>object['listid']).count == 0
-	    	@list = CnList.new(object)
-	    	@list.save
+	    	list = CnList.new(object)
+	    	list.save
 	    end	
     end
 
@@ -18,20 +18,37 @@ class ServiceController < ApplicationController
 		response = Net::HTTP.get(URI.parse(url))
 	    res = JSON.parse(response)
 	    res['objects'].each do |object|
-		    	@listItem = CnCharityList.new(object)
-		    	@listItem.save
+		    	listItem = CnCharityList.new(object)
+		    	listItem.save
 	    end
     end	
   end
 
   def get_cn_lists
-    @lists = CnList.where(:show=>true).order(:show_order)
-    render :json => @lists,:callback => params[:callback]
+    lists = CnList.where(:show=>true).order(:show_order)
+    render :json => lists,:callback => params[:callback]
   end
 
   def get_cn_list
-    @list = CnCharityList.where(:listid=>params[:listid]).order(:rank)
-    render :json => @list,:callback => params[:callback]
+    list = CnCharityList.where(:listid=>params[:listid]).order(:rank)
+    render :json => list,:callback => params[:callback]
+  end
+
+
+def get_charity_cn
+    res = CnCharityList.where(:orgid=>params[:orgid])
+    render :json => res,:callback => params[:callback]
+end
+    #   token = current_user.oauth_token
+    #   url = URI::escape("https://graph.facebook.com/search?q="+params[:text]+"&type=user&access_token="+token);    
+    #   response = Net::HTTP.get(URI.parse(url))
+    #   res = JSON.parse(response)
+    #   render :json => res,:callback => params[:callback]
+
+  def fb_search
+    token = current_user.oauth_token
+    res = current_user.facebook.search(params[:text],{:type=>"user"})
+    render :json => res,:callback => params[:callback]
   end
 
  

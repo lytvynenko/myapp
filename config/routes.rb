@@ -12,6 +12,8 @@ Myapp::Application.routes.draw do
   match '/service/cn_load' => 'service#cn_load'
   match '/service/cn_lists' => 'service#get_cn_lists'
   match '/service/cn_list' => 'service#get_cn_list'
+  match '/service/cn_get' => 'service#get_charity_cn'
+  match '/service/fb_search' => 'service#fb_search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
