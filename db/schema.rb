@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515082200) do
+ActiveRecord::Schema.define(:version => 20130527071705) do
 
   create_table "cn_charities", :force => true do |t|
     t.integer  "orgid"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130515082200) do
     t.string   "resource_uri"
     t.string   "value"
     t.string   "ein"
+    t.text     "description"
   end
 
   create_table "cn_lists", :force => true do |t|
